@@ -18,8 +18,8 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-//
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const mnemonic='pond upon silly rail olive learn acid jump occur happy bleak crack'
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
@@ -41,11 +41,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    development: {
-      host: "127.0.0.1", // Localhost (default: none)
-      port: 7545, // Standard Ethereum port (default: none)
-      network_id: "*", // Any network (default: none)
-    },
+    // development: {
+    //   host: "127.0.0.1", // Localhost (default: none)
+    //   port: 7545, // Standard Ethereum port (default: none)
+    //   network_id: "*", // Any network (default: none)
+    // },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -57,14 +57,21 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-    // ropsten: {
-    // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
-    // network_id: 3,       // Ropsten's id
+    // goerli: {
+    // provider: () => new HDWalletProvider(mnemonic, `https://eth-goerli.g.alchemy.com/v2/BF7zyWHQbxBe9ubwnsgCIjdMECcteZSK`),
+    // network_id: 5,       // Ropsten's id
     // gas: 5500000,        // Ropsten has a lower block limit than mainnet
     // confirmations: 2,    // # of confs to wait between deployments. (default: 0)
     // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
+    aurora: {
+      provider: () => new HDWalletProvider(mnemonic,'https://testnet.aurora.dev'),
+      network_id: 0x4e454153,
+      gas: 10000000,
+      from: '0xa19f628ccDA0280B729BaA62086F81E192B99ec4' // CHANGE THIS ADDRESS
+    },
+
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
@@ -114,3 +121,8 @@ module.exports = {
   // }
   // }
 };
+
+//0x5851F5A83CA8B0336cA2C65DA920fAE8E1cd8f00
+//0x999AA4B170DFF01Add28164408c990662F677415
+
+//aurora 0x7C1Da5A620A02752D99453A7AfaAa84b8364a4bd

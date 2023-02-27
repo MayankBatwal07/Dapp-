@@ -1,5 +1,5 @@
-const Lottery = artifacts.require("./Lottery.sol");
+const ddos = artifacts.require("./ddos.sol");
 
 module.exports = function (deployer) {
-  deployer.deploy(Lottery);
+  deployer.deploy(ddos);
 };
